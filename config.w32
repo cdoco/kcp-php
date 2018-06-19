@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("kcp", "for kcp support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("kcp", "enable kcp support", "no");
+
+if (PHP_KCP != "no") {
+	EXTENSION("kcp", "kcp.c", PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1");
+}
+
